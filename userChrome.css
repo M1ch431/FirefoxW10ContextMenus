@@ -1123,10 +1123,9 @@ menulist > menupopup > menu
 	border: unset !important;
 }
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
-
 /* start fix bookmark toolbar dropdown menu proton */
-#PlacesToolbar menupopup::part(content) {
+/* Fixing Box shadow, margin overflow */
+hbox arrowscrollbox.menupopup-arrowscrollbox {
 	box-shadow: none !important;
 	margin-inline: 0 !important;
 	margin-block: 0 !important;
