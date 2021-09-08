@@ -1034,6 +1034,20 @@
 	margin-inline-start: -8px !important;
 }
 
+/* start background color fix transparent */
+#context-back .menu-iconic-left .menu-iconic-icon,
+#context-forward .menu-iconic-left .menu-iconic-icon,
+#context-reload .menu-iconic-left .menu-iconic-icon,
+#context-stop .menu-iconic-left .menu-iconic-icon,
+#context-bookmarkpage .menu-iconic-left .menu-iconic-icon
+{
+  background-color: transparent !important;
+}
+
+/* end background color fix transparent */
+
+
+
 #ContentSelectDropdown > menupopup > menuitem > .menu-iconic-text
 {
 	margin-left: 24px !important;
