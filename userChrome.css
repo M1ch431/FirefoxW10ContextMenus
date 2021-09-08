@@ -122,6 +122,11 @@
 	margin: 0 !important;
 	min-width: 226px !important;
 	padding: 4px 2px 4px 2px !important;
+	--panel-subview-body-padding: 0 !important;
+	--arrowpanel-background: transparent !important;
+	--arrowpanel-border-radius: 0 !important;
+	--arrowpanel-menuitem-border-radius: 0px !important;
+	--arrowpanel-menuitem-margin: 0px !important;
 }
 
 #autohide-context :-moz-any(menuitem, menu),
@@ -1070,6 +1075,8 @@ menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon {
 
 /* end fix margin end proton */
 
+
+
 #ContentSelectDropdown > menupopup > menuitem > .menu-iconic-text
 {
 	margin-left: 24px !important;
@@ -1115,3 +1122,19 @@ menulist > menupopup > menu
 {
 	border: unset !important;
 }
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
+
+/* start fix bookmark toolbar dropdown menu proton */
+#PlacesToolbar menupopup::part(content) {
+	box-shadow: none !important;
+	margin-inline: 0 !important;
+	margin-block: 0 !important;
+}
+
+#PlacesToolbar menu {
+  border-radius: 0px !important;
+  margin: 0 !important;
+}
+
+/* end fix bookmark toolbar dropdown menu proton */
