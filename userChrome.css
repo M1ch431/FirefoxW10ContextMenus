@@ -114,14 +114,12 @@
 	-moz-appearance: none !important;
 	background-color: var(--context-background) !important;
 	border: 1px solid var(--context-border) !important;
+  border-radius: 0 !important;
+  --panel-border-radius: 0 !important;
+  --panel-border-color: none !important;
+  --panel-padding: 0 !important;
+  --panel-background: none !important;
 	margin: 0 !important;
-	/* Start Proton Fixes */
-	border-radius: 0 !important;
-  	--panel-border-radius: 0 !important;
-  	--panel-border-color: none !important;
-  	--panel-padding: 0 !important;
-  	--panel-background: none !important;
-	/* Proton Fixes End */
 	min-width: 226px !important;
 	padding: 4px 2px 4px 2px !important;
 }
@@ -426,8 +424,12 @@
 	-moz-appearance: none !important;
 	border: solid var(--context-front) !important;
 	border-width: 0px 0px 2px 2px !important;
-	padding: 7px 0px 0px 0px !important;
-	transform: rotate(-45deg) scale(0.75) !important;
+
+  /* proton fix */
+	padding:0px !important;
+	transform: rotate(-135deg) scaleX(0.45) scaleY(-0.7) !important;
+  margin-inline-end: 0px !important;
+  margin-top: -4px;
 }
 
 #autohide-context menuitem[type="radio"] > .menu-iconic-left,
@@ -469,7 +471,7 @@
 #viewButton > menupopup menuitem[type="radio"] > .menu-iconic-left,
 #widget-overflow > #customizationPanelItemContextMenu menuitem[type="radio"] > .menu-iconic-left
 {
-	margin-inline-start: 7px !important;
+	margin-inline-start: 9px !important;
 }
 
 #autohide-context menuitem[checked="true"][type="radio"] > .menu-iconic-left,
@@ -515,10 +517,11 @@
 	background: var(--context-front) !important;
 	border: solid var(--context-front) !important;
 	border-radius: 100% !important;
-	height: 17px !important;
 	margin-top: 1px !important;
 	padding: 1px !important;
 	transform: scale(0.5) !important;
+  max-height: 16px !important;
+  max-width: 16px !important;
 }
 
 /* Disabled */
@@ -917,6 +920,8 @@
 	-moz-appearance: none !important;
 	padding-top: 1px !important;
 	padding-left: 8px !important;
+  /* proton fix */
+  margin-inline-end: 0px !important;
 }
 
 #autohide-context .menu-right,
@@ -1015,6 +1020,18 @@
 	transform: rotate(-45deg) scale(0.55) !important;
 }
 
+/* start check spelling fix proton */
+menuitem[type="checkbox"] > .menu-iconic-left > .menu-iconic-icon, menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
+  display: block !important;
+  max-width: 7px !important;
+}
+
+menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon {
+  max-width: 0px !important;
+}
+
+/* end check spelling fix proton */
+
 #identity-popup-popup-menulist menupopup
 {
 	font: menu !important;
@@ -1046,7 +1063,12 @@
 
 /* end background color fix transparent */
 
+/* start fix margin end proton */
+.menu-iconic > .menu-iconic-left, .menuitem-iconic > .menu-iconic-left {
+  margin-inline-end: 0px;
+}
 
+/* end fix margin end proton */
 
 #ContentSelectDropdown > menupopup > menuitem > .menu-iconic-text
 {
