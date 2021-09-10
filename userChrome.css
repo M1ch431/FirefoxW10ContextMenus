@@ -1125,7 +1125,8 @@ menulist > menupopup > menu
 
 /* start fix bookmark toolbar dropdown menu proton */
 /* Fixing Box shadow, margin overflow */
-hbox arrowscrollbox.menupopup-arrowscrollbox {
+arrowscrollbox.menupopup-arrowscrollbox {
+    background: none !important;
 	box-shadow: none !important;
 	margin-inline: 0 !important;
 	margin-block: 0 !important;
