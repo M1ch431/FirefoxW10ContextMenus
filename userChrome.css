@@ -109,14 +109,25 @@
 #widget-overflow > #customizationPanelItemContextMenu menupopup,
 #back-button > menupopup menupopup,
 #forward-button > menupopup menupopup,
-#viewButton > menupopup menupopup
+#viewButton > menupopup menupopup,
+#identity-popup-security-httpsonlymode-menulist menupopup
 {
 	-moz-appearance: none !important;
 	background-color: var(--context-background) !important;
 	border: 1px solid var(--context-border) !important;
+  border-radius: 0 !important;
+  --panel-border-radius: 0 !important;
+  --panel-border-color: none !important;
+  --panel-padding: 0 !important;
+  --panel-background: none !important;
 	margin: 0 !important;
 	min-width: 226px !important;
 	padding: 4px 2px 4px 2px !important;
+	--panel-subview-body-padding: 0 !important;
+	--arrowpanel-background: transparent !important;
+	--arrowpanel-border-radius: 0 !important;
+	--arrowpanel-menuitem-border-radius: 0px !important;
+	--arrowpanel-menuitem-margin: 0px !important;
 }
 
 #autohide-context :-moz-any(menuitem, menu),
@@ -154,7 +165,8 @@
 #toolbox-menu :-moz-any(menuitem, menu),
 .urlbar-input-box .textbox-contextmenu :-moz-any(menuitem, menu),
 #viewButton > menupopup :-moz-any(menuitem, menu),
-#widget-overflow #customizationPanelItemContextMenu :-moz-any(menuitem, menu)
+#widget-overflow #customizationPanelItemContextMenu :-moz-any(menuitem, menu),
+#identity-popup-security-httpsonlymode-menulist menupopup :-moz-any(menuitem, menu)
 {
 	-moz-appearance: none !important;
 	color: var(--context-front) !important;
@@ -197,7 +209,8 @@
 #toolbox-menu :-moz-any(menuitem, menu) .menu-text,
 .urlbar-input-box .textbox-contextmenu :-moz-any(menuitem, menu) .menu-text,
 #viewButton > menupopup :-moz-any(menuitem, menu) .menu-text,
-#widget-overflow #customizationPanelItemContextMenu :-moz-any(menuitem, menu) .menu-text
+#widget-overflow #customizationPanelItemContextMenu :-moz-any(menuitem, menu) .menu-text,
+#identity-popup-security-httpsonlymode-menulist :-moz-any(menuitem, menu) .menu-text
 {
 	-moz-appearance: none !important;
 	margin-inline-start: unset !important;
@@ -240,7 +253,8 @@
 #toolbox-menu :-moz-any(menuitem, menu) .menu-iconic-text,
 .urlbar-input-box .textbox-contextmenu :-moz-any(menuitem, menu) .menu-iconic-text,
 #viewButton > menupopup :-moz-any(menuitem, menu) .menu-iconic-text,
-#widget-overflow #customizationPanelItemContextMenu :-moz-any(menuitem, menu) .menu-iconic-text
+#widget-overflow #customizationPanelItemContextMenu :-moz-any(menuitem, menu) .menu-iconic-text,
+#identity-popup-security-httpsonlymode-menulist :-moz-any(menuitem, menu) .menu-iconic-text
 {
 	-moz-appearance: none !important;
 	margin-inline-start: unset !important;
@@ -419,8 +433,12 @@
 	-moz-appearance: none !important;
 	border: solid var(--context-front) !important;
 	border-width: 0px 0px 2px 2px !important;
-	padding: 7px 0px 0px 0px !important;
-	transform: rotate(-45deg) scale(0.75) !important;
+
+  /* proton fix */
+	padding:0px !important;
+	transform: rotate(-135deg) scaleX(0.45) scaleY(-0.7) !important;
+  margin-inline-end: 0px !important;
+  margin-top: -4px;
 }
 
 #autohide-context menuitem[type="radio"] > .menu-iconic-left,
@@ -462,7 +480,7 @@
 #viewButton > menupopup menuitem[type="radio"] > .menu-iconic-left,
 #widget-overflow > #customizationPanelItemContextMenu menuitem[type="radio"] > .menu-iconic-left
 {
-	margin-inline-start: 7px !important;
+	margin-inline-start: 9px !important;
 }
 
 #autohide-context menuitem[checked="true"][type="radio"] > .menu-iconic-left,
@@ -508,10 +526,11 @@
 	background: var(--context-front) !important;
 	border: solid var(--context-front) !important;
 	border-radius: 100% !important;
-	height: 17px !important;
 	margin-top: 1px !important;
 	padding: 1px !important;
 	transform: scale(0.5) !important;
+  max-height: 16px !important;
+  max-width: 16px !important;
 }
 
 /* Disabled */
@@ -769,7 +788,8 @@
 #toolbox-menu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
 .urlbar-input-box .textbox-contextmenu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
 #viewButton > menupopup :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
-#widget-overflow #customizationPanelItemContextMenu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"])
+#widget-overflow #customizationPanelItemContextMenu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#identity-popup-security-httpsonlymode-menulist menupopup :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"])
 {
 	-moz-appearance: none !important;
 	background-color: var(--context-accent) !important;
@@ -910,6 +930,8 @@
 	-moz-appearance: none !important;
 	padding-top: 1px !important;
 	padding-left: 8px !important;
+  /* proton fix */
+  margin-inline-end: 0px !important;
 }
 
 #autohide-context .menu-right,
@@ -1008,6 +1030,18 @@
 	transform: rotate(-45deg) scale(0.55) !important;
 }
 
+/* start check spelling fix proton */
+menuitem[type="checkbox"] > .menu-iconic-left > .menu-iconic-icon, menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
+  display: block !important;
+  max-width: 7px !important;
+}
+
+menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon {
+  max-width: 0px !important;
+}
+
+/* end check spelling fix proton */
+
 #identity-popup-popup-menulist menupopup
 {
 	font: menu !important;
@@ -1027,15 +1061,34 @@
 	margin-inline-start: -8px !important;
 }
 
-#ContentSelectDropdown > menupopup > menuitem > .menu-iconic-text
+/* start background color fix transparent */
+#context-back .menu-iconic-left .menu-iconic-icon,
+#context-forward .menu-iconic-left .menu-iconic-icon,
+#context-reload .menu-iconic-left .menu-iconic-icon,
+#context-stop .menu-iconic-left .menu-iconic-icon,
+#context-bookmarkpage .menu-iconic-left .menu-iconic-icon
 {
-	margin-left: 24px !important;
+  background-color: transparent !important;
 }
+
+/* end background color fix transparent */
+
+/* start fix margin end proton */
+.menu-iconic > .menu-iconic-left, .menuitem-iconic > .menu-iconic-left {
+  margin-inline-end: 0px;
+}
+
+/* end fix margin end proton */
 
 #ContentSelectDropdown > menupopup > menucaption > .menu-iconic-text,
 #ContentSelectDropdown > menupopup > menuitem > .menu-iconic-text
 {
 	padding-block: unset !important
+}
+
+#ContentSelectDropdown > menupopup > menuitem > .menu-iconic-text
+{
+	margin-left: 24px !important;
 }
 
 #ContentSelectDropdown > menupopup > menuitem
@@ -1072,3 +1125,18 @@ menulist > menupopup > menu
 {
 	border: unset !important;
 }
+
+/* start fix bookmark toolbar dropdown menu proton */
+arrowscrollbox.menupopup-arrowscrollbox {
+    background: none !important;
+	box-shadow: none !important;
+	margin-inline: 0 !important;
+	margin-block: 0 !important;
+}
+
+#PlacesToolbar menu {
+  border-radius: 0px !important;
+  margin: 0 !important;
+}
+
+/* end fix bookmark toolbar dropdown menu proton */
