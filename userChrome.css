@@ -109,7 +109,8 @@
 #widget-overflow > #customizationPanelItemContextMenu menupopup,
 #back-button > menupopup menupopup,
 #forward-button > menupopup menupopup,
-#viewButton > menupopup menupopup
+#viewButton > menupopup menupopup,
+#identity-popup-security-httpsonlymode-menulist menupopup
 {
 	-moz-appearance: none !important;
 	background-color: var(--context-background) !important;
@@ -164,7 +165,8 @@
 #toolbox-menu :-moz-any(menuitem, menu),
 .urlbar-input-box .textbox-contextmenu :-moz-any(menuitem, menu),
 #viewButton > menupopup :-moz-any(menuitem, menu),
-#widget-overflow #customizationPanelItemContextMenu :-moz-any(menuitem, menu)
+#widget-overflow #customizationPanelItemContextMenu :-moz-any(menuitem, menu),
+#identity-popup-security-httpsonlymode-menulist menupopup :-moz-any(menuitem, menu)
 {
 	-moz-appearance: none !important;
 	color: var(--context-front) !important;
@@ -207,7 +209,8 @@
 #toolbox-menu :-moz-any(menuitem, menu) .menu-text,
 .urlbar-input-box .textbox-contextmenu :-moz-any(menuitem, menu) .menu-text,
 #viewButton > menupopup :-moz-any(menuitem, menu) .menu-text,
-#widget-overflow #customizationPanelItemContextMenu :-moz-any(menuitem, menu) .menu-text
+#widget-overflow #customizationPanelItemContextMenu :-moz-any(menuitem, menu) .menu-text,
+#identity-popup-security-httpsonlymode-menulist :-moz-any(menuitem, menu) .menu-text
 {
 	-moz-appearance: none !important;
 	margin-inline-start: unset !important;
@@ -250,7 +253,8 @@
 #toolbox-menu :-moz-any(menuitem, menu) .menu-iconic-text,
 .urlbar-input-box .textbox-contextmenu :-moz-any(menuitem, menu) .menu-iconic-text,
 #viewButton > menupopup :-moz-any(menuitem, menu) .menu-iconic-text,
-#widget-overflow #customizationPanelItemContextMenu :-moz-any(menuitem, menu) .menu-iconic-text
+#widget-overflow #customizationPanelItemContextMenu :-moz-any(menuitem, menu) .menu-iconic-text,
+#identity-popup-security-httpsonlymode-menulist :-moz-any(menuitem, menu) .menu-iconic-text
 {
 	-moz-appearance: none !important;
 	margin-inline-start: unset !important;
@@ -784,7 +788,8 @@
 #toolbox-menu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
 .urlbar-input-box .textbox-contextmenu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
 #viewButton > menupopup :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
-#widget-overflow #customizationPanelItemContextMenu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"])
+#widget-overflow #customizationPanelItemContextMenu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#identity-popup-security-httpsonlymode-menulist menupopup :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"])
 {
 	-moz-appearance: none !important;
 	background-color: var(--context-accent) !important;
@@ -1075,17 +1080,15 @@ menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon {
 
 /* end fix margin end proton */
 
-
-
-#ContentSelectDropdown > menupopup > menuitem > .menu-iconic-text
-{
-	margin-left: 24px !important;
-}
-
 #ContentSelectDropdown > menupopup > menucaption > .menu-iconic-text,
 #ContentSelectDropdown > menupopup > menuitem > .menu-iconic-text
 {
 	padding-block: unset !important
+}
+
+#ContentSelectDropdown > menupopup > menuitem > .menu-iconic-text
+{
+	margin-left: 24px !important;
 }
 
 #ContentSelectDropdown > menupopup > menuitem
@@ -1124,7 +1127,6 @@ menulist > menupopup > menu
 }
 
 /* start fix bookmark toolbar dropdown menu proton */
-/* Fixing Box shadow, margin overflow */
 arrowscrollbox.menupopup-arrowscrollbox {
     background: none !important;
 	box-shadow: none !important;
